@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/logo-mg.png">
+    <meta name="description" content="E-Commerce Prototype — Figma UX/UI design for an archived clothing storefront, by Marilyn Gable.">
+    <title>E-Commerce Prototype — Marilyn Gable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+
+            <a href="../index.html" class="nav__logo" aria-label="Built by Mar — home">
+                <img src="../images/logo-mg.png" alt="mg — Built by Mar" width="48" height="48">
+            </a>
+
+            <button class="nav__toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav__menu" id="nav-menu" role="list">
+                <li><a href="../index.html" class="nav__link">Home</a></li>
+                <li><a href="../about.html" class="nav__link">About</a></li>
+                <li class="nav__item--dropdown" id="projects-dropdown-item">
+                    <a href="../projects.html" class="nav__link nav__dropdown-toggle">
+                        Projects
+                        <svg class="nav__chevron" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                    <ul class="nav__submenu" id="projects-submenu" role="list">
+                        <li><a href="drunken-boat.html" class="nav__submenu-link">Drunken Boat Issue 26</a></li>
+                        <li><a href="lexcrylics.html" class="nav__submenu-link">Lexcrylics</a></li>
+                        <li><a href="e-commerce-prototype.html" class="nav__submenu-link" aria-current="page">E-Commerce Prototype</a></li>
+                        <li><a href="mood-tracker-app.html" class="nav__submenu-link">Mood Tracker App</a></li>
+                    </ul>
+                </li>
+                <li><a href="../gallery.html" class="nav__link" rel="noopener">Gallery</a></li>
+            </ul>
+
+            <a href="../contact.html" class="btn btn--hire">HIRE ME</a>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="project-detail">
+
+            <!-- ===== HERO / OVERVIEW ===== -->
+            <section class="project-detail-hero">
+                <div class="container project-detail-hero__inner">
+
+                    <figure class="project-detail-hero__media">
+                        <img src="../images/projects/marchive.png" alt="MArchive e-commerce prototype shown on a laptop screen" loading="eager">
+                    </figure>
+
+                    <div class="project-detail-hero__content">
+                        <h1 class="project-detail-hero__title">E-Commerce Prototype</h1>
+
+                        <p class="project-detail-hero__label section-eyebrow section-eyebrow--red">Overview</p>
+                        <div class="project-detail-hero__text">
+                            <p>This Figma E-Commerce project focuses on showcasing archived clothing pieces. Designed for both desktop and mobile platforms, the mockup incorporates seamless functionality and animations within its pages. Key features include a cart overlay for easy navigation, product pages with interactive dropdown menus, and a checkout process, ensuring a user-friendly experience from browsing to purchase. The design emphasizes a sleek, minimal look, aimed at capturing the essence of curated fashion discovery online.</p>
+                        </div>
+
+                        <div class="project-detail-hero__ctas">
+                            <a href="https://www.figma.com/proto/4ZyOx4RNxzphj8LL6U02iM/Marchive--E-Commerce-Platform?node-id=19-1781&p=f&t=Yo8vNrlyXfzaJtmY-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=19%3A1781" class="btn btn--project" target="_blank" rel="noopener">view prototype &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div><!-- /.project-detail -->
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container site-footer__inner">
+            <small class="footer-copy">&copy; 2026 by Marilyn Gable</small>
+            <ul class="social-links" role="list" aria-label="Social media links">
+                <li>
+                    <a href="https://linkedin.com/in/marilyngable" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/builtbymar" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/marilyngable" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
