@@ -2,7 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // No animation, but still reveal the names hidden by .js-anim in CSS
+    document.querySelectorAll('.hero__name, .projects-page-hero__title').forEach(el => {
+      el.style.opacity = '1';
+    });
+    return;
+  }
 
   /* ── NAV scroll state ── */
   const header = document.getElementById('site-header');
@@ -62,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         : `<span class="char-wrap" aria-hidden="true"><span class="char">${char}</span></span>`
     ).join('');
     el.setAttribute('aria-label', text);
+    el.style.opacity = '1';
 
     const chars = el.querySelectorAll('.char');
     gsap.set(chars, { y: '110%' });

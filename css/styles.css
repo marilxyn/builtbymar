@@ -447,6 +447,16 @@ a {
   transition: text-shadow 0.45s ease;
 }
 
+/* Keep the raw text invisible until main.js wraps it in clipped
+   char-spans and reveals it — prevents a flash of unstyled text
+   before the reveal animation takes over. Only applied when JS is
+   available (see inline script in <head>); no-JS visitors still see
+   the plain text immediately. */
+.js-anim .hero__name,
+.js-anim .projects-page-hero__title {
+  opacity: 0;
+}
+
 /* Per-character clip containers for the reveal animation */
 .char-wrap {
   display: inline-block;
