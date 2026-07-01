@@ -78,7 +78,7 @@ a {
 
 .section-heading {
   font-family: var(--f-sans);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1rem, 4vw, 2.5rem);
   font-weight: 600;
   letter-spacing: 0.4em;
   text-transform: uppercase;
@@ -1564,7 +1564,7 @@ a {
 
 .gallery-section__caption {
   font-size: clamp(0.8125rem, 1.1vw, 0.9375rem);
-  color: var(--canvas);
+  color: var(--carbon);
   letter-spacing: 0.08em;
   font-style: italic;
 }
