@@ -1058,6 +1058,7 @@ a {
     font-weight: 400;
     letter-spacing: 0;
     color: var(--red);
+    text-transform: lowercase;
     padding: 0.875rem 0.75rem;
     justify-content: center;
     gap: 0.85em;
@@ -1100,6 +1101,7 @@ a {
   .nav__submenu-link {
     color: var(--black);
     font-size: 1rem;
+    text-transform: lowercase;
     padding: 0.75rem 0.875rem;
     transition: color 0.18s var(--ease), text-shadow 0.3s var(--ease);
   }
