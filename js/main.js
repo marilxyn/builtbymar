@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── Mobile hamburger ── (wired up regardless of motion preference, since
+  /* Mobile hamburger (wired up regardless of motion preference, since
      opening the menu is functionality, not decoration) */
   const navToggle = document.getElementById('nav-toggle');
   const navMenu   = document.getElementById('nav-menu');
@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  /* ── NAV scroll state ── */
+  /* NAV scroll state */
   ScrollTrigger.create({
     start: 20,
     onEnter:     () => header.classList.add('is-scrolled'),
     onLeaveBack: () => header.classList.remove('is-scrolled'),
   });
 
-  /* ── HERO entrance ── */
+  /* HERO entrance */
   const nameEl = document.querySelector('.hero__name');
 
   // Glitch burst: adds class, lets CSS animate, then cleans up
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── About page name — reuse same glitch functions ── */
+  /* About page name — reuse same glitch functions */
   const aboutNameEl = document.querySelector('.about-intro__text .hero__name');
   if (aboutNameEl) {
     ScrollTrigger.create({
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutNameEl.addEventListener('mouseleave', () => aboutNameEl.classList.remove('is-hovered'));
   }
 
-  /* ── Projects page hero ── */
+  /* Projects page hero */
   const projectsHeroTitle = document.querySelector('.projects-page-hero__title');
   if (projectsHeroTitle) {
     gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.15 })
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Scroll reveal helper ── */
+  /* Scroll reveal helper */
   function reveal(selector, vars = {}) {
     const els = gsap.utils.toArray(selector);
     if (!els.length) return;
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Tools ── */
+  /* Tools */
   reveal('.tools .section-eyebrow');
   gsap.fromTo('.tools .section-heading',
     { clipPath: 'inset(0 100% 0 0)' },
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: { trigger: '.tools .section-heading', start: 'top 88%' } });
   reveal('.tools__carousel', { y: 20, duration: 0.55, st: { trigger: '.tools__carousel', start: 'top 90%' } });
 
-  /* ── Tools carousel ── */
+  /* Tools carousel */
   (function () {
     const carousel = document.getElementById('tools-carousel');
     const belt     = document.getElementById('tools-belt');
@@ -277,20 +277,20 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(tick);
   })();
 
-  /* ── Projects header ── */
+  /* Projects header */
   reveal('.projects__header .section-eyebrow');
   gsap.fromTo('.projects__header .section-heading',
     { clipPath: 'inset(0 100% 0 0)' },
     { clipPath: 'inset(0 0% 0 0)', duration: 0.85, ease: 'power3.out',
       scrollTrigger: { trigger: '.projects__header .section-heading', start: 'top 88%' } });
 
-  /* ── Project rows: staggered fade-in ── */
+  /* Project rows: staggered fade-in */
   reveal('.project-row-wrap', {
     y: 24, stagger: 0.08, duration: 0.55,
     st: { trigger: '.projects__dark', start: 'top 85%' },
   });
 
-  /* ── Project accordion ── */
+  /* Project accordion */
   (function () {
     const rows = document.querySelectorAll('.project-row');
     if (!rows.length) return;
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ── Glitch canvas (shared by gallery, about, projects hero) ── */
+  /* Glitch canvas (shared by gallery, about, projects hero) */
   function initGlitchCanvas(id) {
     const canvas = document.getElementById(id);
     if (!canvas) return;
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGlitchCanvas('projects-hero-glitch');
   initGlitchCanvas('gallery-cta-glitch');
 
-  /* ── Gallery ── */
+  /* Gallery */
   reveal('.gallery__header .section-eyebrow');
   gsap.fromTo('.gallery__header .section-heading',
     { clipPath: 'inset(0 100% 0 0)' },
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: { trigger: '.gallery__header .section-heading', start: 'top 88%' } });
   reveal('.gallery__btns .btn', { stagger: 0.12, st: { trigger: '.gallery__dark', start: 'top 80%' } });
 
-  /* ── Gallery / Contact page heroes ── */
+  /* Gallery / Contact page heroes */
   gsap.fromTo('.gallery-page-hero .section-heading',
     { clipPath: 'inset(0 100% 0 0)' },
     { clipPath: 'inset(0 0% 0 0)', duration: 1.15, ease: 'power3.out',
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { clipPath: 'inset(0 0% 0 0)', duration: 1.15, ease: 'power3.out',
       scrollTrigger: { trigger: '.contact-page-hero__title', start: 'top 88%' } });
 
-  /* ── About ── */
+  /* About */
   gsap.from('.about__text', {
     scrollTrigger: { trigger: '.about__inner', start: 'top 80%' },
     x: -36, opacity: 0, duration: 0.85, ease: 'power3.out',
@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
     x: 36, opacity: 0, duration: 0.85, ease: 'power3.out',
   });
 
-  /* ── Footer ── */
+  /* Footer */
   reveal('.site-footer__inner > *', {
     y: 12, stagger: 0.08, duration: 0.45,
     st: { trigger: '.site-footer', start: 'top 95%' },

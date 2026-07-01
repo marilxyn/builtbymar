@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Lightbox ── */
+  /* Lightbox */
   const lightbox = document.getElementById('lightbox');
   const lbImg    = document.getElementById('lb-img');
   const lbAlt    = document.getElementById('lb-alt');
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Math.abs(dx) > 50) dx > 0 ? next() : prev();
   }, { passive: true });
 
-  /* ── Scroll reveals ── */
+  /* Scroll reveals */
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 

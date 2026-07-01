@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  /* ── Scroll reveal helper (mirrors main.js) ── */
+  /* Scroll reveal helper (mirrors main.js) */
   function reveal(selector, vars = {}) {
     const els = gsap.utils.toArray(selector);
     if (!els.length) return;
@@ -26,16 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: { trigger: el, start: 'top 88%' } });
   }
 
-  /* ── Page hero ── */
+  /* Page hero */
   reveal('.about-page-hero .section-eyebrow');
   revealHeading('.about-page-hero .section-heading');
 
-  /* ── Mission ── */
+  /* Mission */
   reveal('.about-mission .section-eyebrow');
   revealHeading('.about-mission .section-heading');
   reveal('.about-mission__text', { y: 24, st: { trigger: '.about-mission__text', start: 'top 88%' } });
 
-  /* ── Values ── */
+  /* Values */
   reveal('.about-values__header .section-eyebrow');
   revealHeading('.about-values__header .section-heading');
   reveal('.value-row', {
@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
     st: { trigger: '.values-list', start: 'top 85%' },
   });
 
-  /* ── CTA ── */
+  /* CTA */
   reveal('.about-cta__inner .section-eyebrow');
   revealHeading('.about-cta__heading');
 
-  /* ── Glitch canvas (same logic as gallery) ── */
+  /* Glitch canvas (same logic as gallery) */
   (function () {
     const canvas = document.getElementById('about-glitch');
     if (!canvas) return;
