@@ -2,8 +2,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // No animation, but still reveal the names hidden by .js-anim in CSS
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Mobile hamburger ── (wired up regardless of motion preference, since
+     opening the menu is functionality, not decoration) */
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu   = document.getElementById('nav-menu');
+  const navItems  = navMenu.querySelectorAll(':scope > li');
+  const dropdownItem = document.getElementById('projects-dropdown-item');
+  const header    = document.getElementById('site-header');
+
+  function openMenu() {
+    navMenu.classList.add('is-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    header.classList.add('is-menu-open');
+    document.body.style.overflow = 'hidden';
+
+    if (prefersReducedMotion) {
+      gsap.set(navItems, { y: 0, opacity: 1 });
+      return;
+    }
+
+    // Quick RGB-split jitter as the panel wipes open
+    navMenu.classList.remove('is-flicker');
+    void navMenu.offsetWidth;
+    navMenu.classList.add('is-flicker');
+    setTimeout(() => navMenu.classList.remove('is-flicker'), 400);
+
+    gsap.fromTo(navItems,
+      { y: 24, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, stagger: 0.07, ease: 'power3.out', delay: 0.2 }
+    );
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    header.classList.remove('is-menu-open');
+    document.body.style.overflow = '';
+    dropdownItem?.classList.remove('is-open');
+
+    if (prefersReducedMotion) return;
+    gsap.to(navItems, { y: -12, opacity: 0, duration: 0.22, stagger: 0.03, ease: 'power2.in' });
+  }
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  // Chevron toggles the Projects submenu on mobile without navigating away
+  const dropdownChevron = document.querySelector('.nav__dropdown-toggle .nav__chevron');
+  dropdownChevron?.addEventListener('click', (e) => {
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdownItem.classList.toggle('is-open');
+    }
+  });
+
+  if (prefersReducedMotion) {
+    // No decorative animation, but still reveal the names hidden by .js-anim in CSS
     document.querySelectorAll('.hero__name, .projects-page-hero__title').forEach(el => {
       el.style.opacity = '1';
     });
@@ -11,28 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── NAV scroll state ── */
-  const header = document.getElementById('site-header');
   ScrollTrigger.create({
     start: 20,
     onEnter:     () => header.classList.add('is-scrolled'),
     onLeaveBack: () => header.classList.remove('is-scrolled'),
-  });
-
-  /* ── Mobile hamburger ── */
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu   = document.getElementById('nav-menu');
-  navToggle.addEventListener('click', () => {
-    const open = navMenu.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  navMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navMenu.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
   });
 
   /* ── HERO entrance ── */
