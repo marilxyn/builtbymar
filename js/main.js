@@ -2,6 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
+  // GSAP/ScrollTrigger's setup pass can stomp the browser's native
+  // scroll-to-#hash on load, and lazy-loading gallery images keep shifting
+  // the layout underneath it. Re-snap to the target every frame until its
+  // position holds still, capped so it can't fight a user who scrolls away.
+  if (location.hash) {
+    window.addEventListener('load', () => {
+      const target = document.querySelector(location.hash);
+      if (!target) return;
+      let stableFrames = 0;
+      let attempts = 0;
+      const chase = () => {
+        target.scrollIntoView({ behavior: 'auto' });
+        const settled = Math.abs(target.getBoundingClientRect().top) < 2;
+        stableFrames = settled ? stableFrames + 1 : 0;
+        attempts++;
+        if (stableFrames < 4 && attempts < 120) requestAnimationFrame(chase);
+      };
+      requestAnimationFrame(chase);
+    });
+  }
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ── Mobile hamburger ── (wired up regardless of motion preference, since

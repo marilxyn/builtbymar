@@ -30,6 +30,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep anchor-linked sections clear of the fixed header */
+[id] {
+  scroll-margin-top: var(--nav-h);
+}
+
 body {
   background: var(--canvas);
   color: var(--black);
