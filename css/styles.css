@@ -1939,3 +1939,9 @@ a {
   font-size: 1.0625rem;
   padding: 0.875rem 2rem;
 }
+
+@media (max-width: 680px) {
+  .section-heading {
+    font-size: 1.8rem;
+  }
+}
